@@ -54,6 +54,6 @@
 
 ### Collabrators for this project
 1. Onwuegbuchulem Victor Chukwuemeka <onwuegbuchulemvic02@gmail.com>
-2. Adelola <johnsamxy@gmail.com>
+2. Adeola johnson <johnsamxy@gmail.com>
 
 <p align="center"> ALX AFRICA </p>
