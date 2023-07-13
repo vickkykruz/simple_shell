@@ -50,7 +50,7 @@
 6. Continue the shell execution until the user exits
 
 ### Flowchart of this project
-<p align="center"><img src="https://ibb.co/0sWjnZX" alt="Flowchart for simpleshell project"></p>
+<p align="center"><img src="https://i.ibb.co/nPVswf0/Screenshot-20230708-103555.png" alt="Flowchart for simple shell project" /></p>
 
 ### Collabrators for this project
 1. Onwuegbuchulem Victor Chukwuemeka <onwuegbuchulemvic02@gmail.com>
