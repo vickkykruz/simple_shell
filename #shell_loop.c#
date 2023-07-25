@@ -1,0 +1,58 @@
+#include "shell.h"
+/**
+ * shell_loop - This is a function that loop the program after an exection
+ * has been made.
+ * @prompt: This is an argument that showcase the prompot to the user
+ * @prt: This is an argument that reprsent the struct the data_list use to store
+ * the data or responsd passed
+ * 
+ * Return: This function return a void (nothing)
+*/
+void shell_loop(data_list *list_t)
+{
+  string pth;
+  
+  if (shell->arv[1])
+    exit (98);
+  else if (!isatty(STDIN_FILENO))
+    solo_sh(shell);
+  else
+    {
+      for (; ;)
+	{
+	  print("($) ");
+	  fflush(stdout);
+	  pth = validate_shell(list_t);
+	  
+	  if (!pth)
+	    continue;
+	  
+	  list_t->pid = fork();
+	  if (shell->pid == 0)
+	    {
+	      shell->status = execve(path, shell->arr, shel
+				     l->_environ);
+	      if (shell->status == -1)
+		{
+		  write(STDERR_FILENO, shell->av[0], my
+			_strlen(shell->av[0]));
+		  write(STDERR_FILENO, ": ", 2);
+		  write(STDERR_FILENO, shell->arr[0], m
+			y_strlen(shell->arr[0]));
+		  write(STDERR_FILENO, ": Permission de
+nied\n", 20);
+		  free(path);
+		  shell->status = 13;
+		  my_exit(shell);
+		}
+	    }
+	  else
+	    {
+	      wait(&shell->status);
+	      shell->status = WEXITSTATUS(shell->status);
+	    }
+	  free_arr2(shell->arr);
+	  free(path);
+	}
+    }
+}
