@@ -2,8 +2,6 @@
 /**
  * free_alias - This is a function that free the alias linked list
  * @lists: This is an argument that reprsent the alias list struct
- *
- * Return: This function return void (nothing)
  */
 void free_alias(alias_list *lists)
 {
