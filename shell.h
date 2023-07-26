@@ -94,4 +94,4 @@ alias_list *add_alias(alias_list **, char *, char *);
 int _alias(data_list *);
 int set_alias(data_list *, char *);
 void validate_alias(data_list *);
-#endif
+#endif /* SHELL_PROJECT */
