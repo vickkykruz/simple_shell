@@ -17,7 +17,7 @@ extern char **environ;
  * @str_path: This is an argument that contain the path string
  * @next: This is an argument that contain the informat of the next list
  * Description: This struct is allows us the store or hold the command path
- * list called by the user
+ *              list called by the user
  */
 typedef struct path
 {
