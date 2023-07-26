@@ -131,8 +131,7 @@ char *_strtoken(char *str, const char *delim)
 			{
 				if (_memchr(delim, *s, len) != NULL)
 					break;
-				else
-					++s;
+				++s;
 			}
 			if (*s)
 			{

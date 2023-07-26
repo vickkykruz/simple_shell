@@ -64,7 +64,7 @@ char **get_cmd(data_list *list_t, char *buff, size_t num)
 	ssize_t i = 0, n;
 	size_t j = 0;
 	char *token;
-	char **idx_arr= NULL;
+	char **idx_arr = NULL;
 
 	/** Get the input command **/
 	n = _getline(&buff, &num, stdin);
@@ -74,7 +74,6 @@ char **get_cmd(data_list *list_t, char *buff, size_t num)
 		list_t->intact = 3;
 		return (idx_arr);
 	}
-
 	/* Remove comment and return the number of idexs */
 	n = remove_comments(&buff);
 	if (n == 0) /* if failed */
@@ -82,12 +81,12 @@ char **get_cmd(data_list *list_t, char *buff, size_t num)
 
 	for (i = 0; i < n; i++)
 	{
-		if (buff[i] == ' ' || buff[i] == '\n' || buff[i] == '\t' || buff[i] == '\r' || buff[i] == '\a')
+		if (buff[i] == ' ' || buff[i] == '\n' || buff[i] == '\t' ||
+buff[i] == '\r' || buff[i] == '\a')
 			j++;
 		else
 			continue;
 	}
-	/** Alocate space to stroe the command */
 	idx_arr = malloc(sizeof(char *) * (j + 1));
 	token = _strtoken(buff, DELIME_LIST);
 	i = 0;
@@ -99,10 +98,8 @@ char **get_cmd(data_list *list_t, char *buff, size_t num)
 		token = _strtoken(NULL, DELIME_LIST);
 		i++;
 	}
-
 	idx_arr[i] = NULL;
 	free(buff);
-
 	return (idx_arr);
 }
 /**
@@ -116,22 +113,17 @@ int _set(data_list *list_t)
 	char **nevn;
 	int i, j, k = 0, num, chk = 0;
 
-	/* Get the total len of the env **/
 	for (i = 0; list_t->env[i]; i++)
 		;
 	/* check if the fiest index or second index is NULL */
 	if (list_t->arry[1] == NULL || list_t->arry[2] == NULL)
 		return (cmd_cd_err(list_t, 2));
-
-	/* Allocate a new evn node **/
 	nevn = malloc(sizeof(char *) * (i + 2));
 	if (!nevn)
 		return (12);
 
-	/** Loop and insert **/
 	for (i = 0; list_t->env[i]; i++)
 	{
-		/* initaize the second index and the checker */
 		j = 0, num = 0;
 		while (list_t->env[i][j] != '=' && list_t->arry[1][j] != '\0')
 		{
@@ -139,7 +131,6 @@ int _set(data_list *list_t)
 				num = 1;
 			j++;
 		}
-		/* Each if checking index is 0 */
 		if (num == 0)
 		{
 			nevn[k] = modify_env(list_t);
@@ -158,7 +149,6 @@ int _set(data_list *list_t)
 		nevn[k] = NULL;
 	free_arr_ptr(list_t->env);
 	list_t->env = nevn;
-
 	return (0);
 }
 /**
@@ -177,7 +167,6 @@ int _unset(data_list *list_t)
 		;
 	if (list_t->arry[1] == NULL)
 		return (cmd_cd_err(list_t, 3));
-
 	/* Allocate spave for the env */
 	nevn = malloc(sizeof(char *) * (i + 1));
 	if (!nevn)
@@ -209,6 +198,5 @@ int _unset(data_list *list_t)
 	}
 	free_arr_ptr(list_t->env);
 	list_t->env = nevn;
-
 	return (0);
 }

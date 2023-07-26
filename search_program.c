@@ -107,7 +107,6 @@ path_list *path_to_list(data_list *list_t)
 				}
 				else
 				{
-
 					if (k == 0)
 						str = malloc(sizeof(char) * 150);
 					str[k] = list_t->env[i][j], k++;

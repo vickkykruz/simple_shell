@@ -1,5 +1,10 @@
 #include "shell.h"
-/***/
+/**
+ * solo_sh - This is a function that return in an interactive mode
+ * @list_t: This is an argument that reprsent the data list struct
+ *
+ * Return: This function return the use of exit with the status
+ */
 void solo_sh(data_list *list_t)
 {
 	char *path;
@@ -41,7 +46,12 @@ void solo_sh(data_list *list_t)
 		free(path);
 	}
 }
-/**/
+/**
+ * arry_len - This is a function that return the lenght of a number
+ * @num: This is an argument that reprsent the given number
+ *
+ * Return: This function return the lenght of the number
+ */
 int arry_len(int num)
 {
 	int len = 1;

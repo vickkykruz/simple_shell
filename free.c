@@ -1,4 +1,10 @@
 #include "shell.h"
+/**
+ * free_alias - This is a function that free the alias linked list
+ * @lists: This is an argument that reprsent the alias list struct
+ *
+ * Return: This function return void (nothing)
+ */
 void free_alias(alias_list *lists)
 {
 	alias_list *tmp = lists, *prv;
@@ -19,7 +25,12 @@ void free_alias(alias_list *lists)
 		free(tmp);
 	}
 }
-/***/
+/**
+ * free_arr_ptr - This is a function that free the array pointers
+ * @ptr: This is an argument that reprsent the given pointer passed
+ *
+ * Return: This function return a void (nothing)
+ */
 void free_arr_ptr(char **ptr)
 {
 	int i;
@@ -31,7 +42,12 @@ void free_arr_ptr(char **ptr)
 		free(ptr);
 	}
 }
-/***/
+/**
+ * free_list - This is a function that free the path linked list
+ * @list: This is an argument that represent the path list struct
+ *
+ * Return: This function return the free path linked list
+ */
 void free_list(path_list *list)
 {
 	path_list *tmp = list, *prv;

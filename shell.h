@@ -47,7 +47,7 @@ int _atoi(char *);
 int _isdigit(char *);
 int _strcmp(char *, char *);
 int _strlen(char *);
-void * _memchr(register const void *, int, size_t);
+void *_memchr(register const void *, int, size_t);
 
 /** FUNC3.C FILE **/
 void *_realloc(void *, unsigned int, unsigned int);

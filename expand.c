@@ -1,5 +1,11 @@
 #include "shell.h"
-/****/
+/**
+ * expand_variable - This is a function that return the expanded variable to
+ * its corresponding data
+ * @list_t: This is an argument that reprsent the data list struct
+ *
+ * Return: This function retur nothing (void)
+ */
 void expand_variable(data_list *list_t)
 {
 	char *str, *val;
@@ -40,7 +46,6 @@ void expand_variable(data_list *list_t)
 				list_t->arry[i] = _strdup(val);
 				free(val);
 			}
-		}
-		i++;
+		} i++;
 	}
 }

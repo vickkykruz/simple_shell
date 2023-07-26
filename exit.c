@@ -1,5 +1,10 @@
 #include "shell.h"
-/***/
+/**
+ * sh_exit - This is a function that return the exit of the shell
+ * @list_t: This is an argument thay reprsent the data list struct
+ *
+ * Return: This function the sucess exut of the shell (0) otherwise error
+ */
 int sh_exit(data_list *list_t)
 {
 	int statusCode;

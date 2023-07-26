@@ -1,5 +1,14 @@
 #include "shell.h"
-/***/
+/**
+ * add_alias - This is a function that return the modified new node at the
+ * end of alias_list
+ * @list: This is an argument that reprsent head pointer of the list
+ * @str: Thisnis an argument that reprsent the given str of the alias
+ * @val: This is an argument that reprsent the given value passed to the
+ * function
+ *
+ * Return: This function return the addres of the new modified liat
+ */
 alias_list *add_alias(alias_list **list, char *str, char *val)
 {
 	alias_list *tmp = *list, *node;
@@ -14,7 +23,6 @@ alias_list *add_alias(alias_list **list, char *str, char *val)
 		_strcat(s, val);
 		_strcat(s, "'");
 	}
-
 	while (tmp)
 	{
 		if (_strcmp(tmp->str, str) == 0)
@@ -33,7 +41,6 @@ alias_list *add_alias(alias_list **list, char *str, char *val)
 	node->str = _strdup(str);
 	node->val = _strdup(s);
 	node->next = NULL;
-
 	if (tmp == NULL)
 		*list = node;
 	else
@@ -45,7 +52,14 @@ alias_list *add_alias(alias_list **list, char *str, char *val)
 	free(s);
 	return (*list);
 }
-/**/
+/**
+ * set_alias - This is a function that return the created alias
+ * @list_t: Thisbis an argument that represent the pointer to the data list
+ * struct
+ * @ar: This is an argument that represent the format
+ *
+ * Return: This function return (0) as sucess otherwise error
+ */
 int set_alias(data_list *list_t, char *ar)
 {
 	char *str, *val, *na;
@@ -66,7 +80,12 @@ int set_alias(data_list *list_t, char *ar)
 	free(str);
 	return (0);
 }
-/**/
+/**
+ * _alias - This is a function that return alias builtin
+ * @list_t: This is an argument that reprsent that data list struct
+ *
+ * Return: This function return (0) as sucees otherwise error
+ */
 int _alias(data_list *list_t)
 {
 	int i, j, chk, res = 0;
@@ -94,7 +113,13 @@ int _alias(data_list *list_t)
 	}
 	return (res);
 }
-/***/
+/**
+ * validate_alias - This is a function that return the validate command it
+ * is an alias
+ * @list_t: This is an argument that reprsent the data list struct
+ *
+ * Return: This function return nothing (void)
+ */
 void validate_alias(data_list *list_t)
 {
 	char *cmd;

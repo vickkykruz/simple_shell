@@ -46,7 +46,6 @@ char *is_shell(data_list *list_t)
 		free(dir);
 		return (NULL);
 	}
-
 	return (dir);
 }
 /**
@@ -54,15 +53,15 @@ char *is_shell(data_list *list_t)
  * has been made.
  * @list_t: This is an argument that reprsent the struct the data_list use to
  * store the data or responsd passed
- * 
+ *
  * Return: This function return a void (nothing)
 */
 void shell_loop(data_list *list_t)
 {
 	char *pth;
-  
+
 	if (list_t->arv[1])
-		exit (98);
+		exit(98);
 	else if (!isatty(STDIN_FILENO))
 		solo_sh(list_t);
 	else
@@ -74,7 +73,7 @@ void shell_loop(data_list *list_t)
 			pth = is_shell(list_t);
 			if (!pth)
 				continue;
-			
+
 			list_t->pid = fork();
 			if (list_t->pid == 0)
 			{
@@ -82,21 +81,21 @@ void shell_loop(data_list *list_t)
 				if (list_t->status == -1)
 				{
 					write(STDERR_FILENO, list_t->arv[0], _strlen(list_t->arv[0]));
-		  write(STDERR_FILENO, ": ", 2);
-		  write(STDERR_FILENO, list_t->arry[0], _strlen(list_t->arry[0]));
-		  write(STDERR_FILENO, ": Permission denied\n", 20);
-		  free(pth);
-		  list_t->status = 13;
-		  sh_exit(list_t);
+					write(STDERR_FILENO, ": ", 2);
+					write(STDERR_FILENO, list_t->arry[0], _strlen(list_t->arry[0]));
+					write(STDERR_FILENO, ": Permission denied\n", 20);
+					free(pth);
+					list_t->status = 13;
+					sh_exit(list_t);
+				}
+			}
+			else
+			{
+				wait(&list_t->status);
+				list_t->status = WEXITSTATUS(list_t->status);
+			}
+			free_arr_ptr(list_t->arry);
+			free(pth);
 		}
-	    }
-	  else
-	    {
-	      wait(&list_t->status);
-	      list_t->status = WEXITSTATUS(list_t->status);
-	    }
-	  free_arr_ptr(list_t->arry);
-	  free(pth);
 	}
-    }
 }

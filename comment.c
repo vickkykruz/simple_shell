@@ -33,7 +33,6 @@ int remove_comments(char **str)
 			break;
 		ptr = buff[n];
 	}
-
 	if (n == _strlen(*str))
 	{
 		free(buff);
@@ -45,7 +44,6 @@ int remove_comments(char **str)
 	tmp[i] = '\n';
 	tmp[i + 1] = '\0';
 	free(*str);
-
 	*str = tmp;
 	free(buff);
 

@@ -42,7 +42,7 @@ int _isdigit(char *str)
 }
 /**
  * _strlen - Thisnis a function that returm the total lenght if a string
- * @str: This is an argument that reprsent the given string 
+ * @str: This is an argument that reprsent the given string
  *
  * Return: This function return the total string length
  */

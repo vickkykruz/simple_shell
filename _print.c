@@ -2,7 +2,7 @@
 /**
  * print_alias - This is a function that display the alias
  * @list_t: This is an argument that represent the data_list struct
- * 
+ *
  * Return: This function return an int (0) as sucess and (1) fauilure
 */
 integer print_alias_list(data_list *list_t)
