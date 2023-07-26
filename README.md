@@ -24,7 +24,7 @@
 <p> The shell manages the environment in which commands are executed. It maintains a set of environment variables that can be accessed by the user or the running programs. Environment variables store information such as paths to executable files or user preferences.</p>
 
 #### 7. Command Completion and History: 
-<p> Command completion helps users by suggesting or automatically completing commands or filenames as they type. Command history allows users to access previously executed commands and re-execute them easily.</p>
+<p> Command completion helps users by suggesting or automatically completing commands or filenames as they type. Command history allows users to access previously executed commands and re-execute them with ease.</p>
 
 ### Algorithm Of This Project
 1. Prompt the user to enter the command.
